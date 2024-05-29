@@ -4,9 +4,9 @@
 <main>
     <section>
       <div class="container">
-        <div class="row">
+        <div class="row pt-3">
           <div class="col-auto">
-            <p>comics page index</p>
+            <h1>comics page index</h1>
           </div>
           <div class="col-auto ms-auto">
             <a href="{{ route('comics.create') }}" class="btn btn-primary">Nuovo comic</a>
@@ -14,31 +14,42 @@
         </div>
       </div>
       <div class="container">
-        <table class="table">
+        <table class="table-dark">
             <thead>
-            <tr>
+              <tr>
                 <th>ID</th>
                 <th>Immagine</th>
                 <th>Titolo</th>
-            </tr>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Series</th>
+                <th>Release</th>
+                <th>Type</th>
+                <th>Artist</th>
+                <th>Writer</th>
+              </tr>
             </thead>
-            <tbody>
-            @foreach ($comics as $comic)
-                <tr>
-                    <td>{{ $comic->id }}</td>
-                    <td>
-                    <img src="{{ $comic->thumb }}" height="144" width="144" alt="">
-                    </td>
-                    <td>
-                    <a href="{{ route('comics.show', $comic ) }}">
-                        {{ $comic->title }}
-                    </a>
-                    </td>
-                    <td>{{ $comic->type}}</td>
-                    <td>{{ $comic->price}}</td>
-                    <td></td>
-                </tr>
-            @endforeach
+            <tbody  class="table-group-divider table-hover table-striped">
+              @foreach ($comics as $comic)
+                  <tr class="p-3">
+                      <td>{{ $comic->id }}</td>
+                      <td>
+                        <img src="{{ $comic->thumb }}" height="200" width="150" alt="">
+                      </td>
+                      <td>
+                        <a href="{{ route('comics.show', $comic ) }}">
+                            {{ $comic->title }}
+                        </a>
+                      </td>
+                      <td>{{ $comic->description}}</td>
+                      <td>{{ $comic->price}}</td>
+                      <td>{{ $comic->series}}</td>
+                      <td>{{ $comic->sale_date}}</td>
+                      <td>{{ $comic->type}}</td>
+                      <td>{{ $comic->artists}}</td>
+                      <td>{{ $comic->writers}}</td>
+                  </tr>
+              @endforeach
             </tbody>
         </table>
       </div>

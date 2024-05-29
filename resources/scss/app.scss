@@ -2,3 +2,11 @@
 @use './partials/_footer';
 @import '~bootstrap/scss/bootstrap';
 
+.app{
+    height: 100vh;
+}
+
+*{
+    color: white;
+    background-color: #1F1F1F;
+}

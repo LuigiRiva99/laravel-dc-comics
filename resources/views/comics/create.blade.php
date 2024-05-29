@@ -5,8 +5,11 @@
 <main>
   <section>
     <div class="container">
-      <p>Comic.create</p>
-      <h2 class="fs-2">Crea Comic</h2>
+        <p>Comic.create</p>
+        <a href="{{ route('comics.index') }}">
+            Home Page
+        </a>
+        <h2 class="fs-2">Crea Comic</h2>
     </div>
     <div class="container">
         <form  action="{{ route('comics.store') }}" method="POST">
