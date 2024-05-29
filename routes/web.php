@@ -21,5 +21,12 @@ Route::get('/', function () {
 //comics index
 Route::get('/comics', [ResourceController::class, 'index'])->name('comics.index');
 
+//comics create
+Route::get('/comics/create', [ResourceController::class, 'create'])->name('comics.create');
+
 //comics show
 Route::get('/comics/{comic}', [ResourceController::class, 'show'])->name('comics.show');
+
+//comics store
+Route::post('/comics',[ResourceController::class, 'store'])->name('comics.store');
+

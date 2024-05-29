@@ -8,6 +8,9 @@
           <div class="col-auto">
             <p>comics page index</p>
           </div>
+          <div class="col-auto ms-auto">
+            <a href="{{ route('comics.create') }}" class="btn btn-primary">Nuovo comic</a>
+          </div>
         </div>
       </div>
       <div class="container">

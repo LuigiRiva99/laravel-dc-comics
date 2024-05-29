@@ -20,4 +20,15 @@ class ResourceController extends Controller
 
         return view('comics.show',compact ('comic'));
     }
+
+    //CREATE
+    public function create() {
+
+        return view('comics.create');
+    }
+
+    //STORE
+    public function store() {
+        return 'store method';
+    }
 }
