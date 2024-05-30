@@ -20,6 +20,14 @@
         <p>{{ $comic->type}}</p>
         <p>{{ $comic->artists}}</p>
         <p>{{ $comic->writers}}</p>
+        <a href="{{ route('comics.edit', $comic) }}">Modifica</a>
+        <form action="{{ route('comics.destroy',$comic) }}" method="POST" class="mt-2">
+                              
+          @method('DELETE')
+          @csrf
+    
+          <button class="btn btn-danger">elimina</button>
+        </form>
     </div>
 </main>
 

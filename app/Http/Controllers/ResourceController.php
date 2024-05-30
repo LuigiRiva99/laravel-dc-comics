@@ -38,7 +38,7 @@ class ResourceController extends Controller
         $new_comic->thumb = $data['thumb'];
         $new_comic->price = $data['price'];
         $new_comic->series = $data['series'];
-        $new_comic->sale_date = $data['sales_date'];
+        $new_comic->sale_date = $data['sale_date'];
         $new_comic->type = $data['type'];
         $new_comic->artists = $data['artists'];
         $new_comic->writers = $data['writers'];
@@ -66,5 +66,14 @@ class ResourceController extends Controller
         $comic->save();
 
         return view('comics.show',compact ('comic'));
+    }
+
+    //DESTROY
+    public function destroy(Comic $comic) {
+
+        $comic->delete();
+
+        return to_route('comics.index');
+        //return view('comics.index')
     }
 }

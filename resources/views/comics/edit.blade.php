@@ -3,7 +3,7 @@
 @section('content')
 
 <main>
-  <section>
+  <section >
     <div class="container">
         <p>Comic.edit</p>
         <a href="{{ route('comics.index') }}">
@@ -64,6 +64,13 @@
                 <input type="text" name="writers" class="form-control" id="writers" placeholder="...">
             </div>
             <button class="btn btn-primary">Modifica</button>
+        </form>
+        <form action="{{ route('comics.destroy',$comic) }}" method="POST" class="mt-2">
+                          
+            @method('DELETE')
+            @csrf
+
+            <button class="btn btn-danger">elimina</button>
         </form>
     </div>
   </section>
