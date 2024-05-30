@@ -49,4 +49,22 @@ class ResourceController extends Controller
         return redirect()->route('comics.show', $new_comic);
         
     }
+
+    //EDIT
+    public function edit(Comic $comic) {
+
+        return view('comics.edit', compact('comic'));
+    }
+
+    //EPDATE
+    public function update(Request $request,Comic $comic) {
+
+        $new_form_data = $request->all();
+
+        $comic->fill($new_form_data);
+
+        $comic->save();
+
+        return view('comics.show',compact ('comic'));
+    }
 }

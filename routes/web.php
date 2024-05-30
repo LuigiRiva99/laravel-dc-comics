@@ -30,3 +30,9 @@ Route::get('/comics/{comic}', [ResourceController::class, 'show'])->name('comics
 //comics store
 Route::post('/comics',[ResourceController::class, 'store'])->name('comics.store');
 
+//comics edit
+Route::get('/comics/{comic}/edit', [ResourceController::class, 'edit'])->name('comics.edit');
+
+//comics update
+Route::put('/comics/{comic}', [ResourceController::class, 'update'])->name('comics.update');
+

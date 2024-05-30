@@ -48,6 +48,9 @@
                       <td>{{ $comic->type}}</td>
                       <td>{{ $comic->artists}}</td>
                       <td>{{ $comic->writers}}</td>
+                      <td>
+                        <a href="{{ route('comics.edit', $comic) }}">Modifica</a>
+                      </td>
                   </tr>
               @endforeach
             </tbody>
